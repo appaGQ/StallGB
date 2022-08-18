@@ -1,12 +1,14 @@
 from requests import Session
 from bs4 import BeautifulSoup
 from db import list_of_iphone_12_wt_colour, list_of_iphone_13_wt_colour
+from fake_useragent import UserAgent
 
 url_BG_airpods = "https://biggeek.ru/catalog/apple-airpods"
 url_BG_iphone_12 = 'https://biggeek.ru/catalog/apple-iphone-12'
 url_BG_iphone_13 = 'https://biggeek.ru/catalog/apple-iphone-13'
+ua = UserAgent()
 headers = {
-    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.119 YaBrowser/22.3.0.2520 Yowser/2.5 Safari/537.36',
+    'user-agent': ua.random,
     'accept': '*/*'
 }
 session = Session()

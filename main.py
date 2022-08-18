@@ -1,7 +1,8 @@
+# - *- coding: utf- 8 - *-
+
 import telebot
 import config
 from telebot import types
-
 from get_info import get_data_airpods, get_data_iphone_12, get_data_iphone_13
 
 bot = telebot.TeleBot(config.TOKEN)
@@ -78,47 +79,46 @@ def message_reply(message):
 # Возрврашение парсинга с выбранным цветом
 @bot.callback_query_handler(func=lambda c: c.data and c.data.startswith('btn'))
 def process_callback_kb1btn1(callback_query: types.CallbackQuery):
-
     code = callback_query.data[-3:]
     bot.send_message(callback_query.from_user.id, 'Смотри что есть:')
     # Айфоны 12
     if code == '001':
-            bot.answer_callback_query(callback_query.id)
-            bot.send_message(callback_query.from_user.id, get_data_iphone_12('Black'))
+        bot.answer_callback_query(callback_query.id)
+        bot.send_message(callback_query.from_user.id, get_data_iphone_12('Black'))
     elif code == '002':
-            bot.answer_callback_query(callback_query.id)
-            bot.send_message(callback_query.from_user.id, get_data_iphone_12('White'))
+        bot.answer_callback_query(callback_query.id)
+        bot.send_message(callback_query.from_user.id, get_data_iphone_12('White'))
     elif code == '003':
-            bot.answer_callback_query(callback_query.id)
-            bot.send_message(callback_query.from_user.id, get_data_iphone_12('Blue'))
+        bot.answer_callback_query(callback_query.id)
+        bot.send_message(callback_query.from_user.id, get_data_iphone_12('Blue'))
     elif code == '004':
-            bot.answer_callback_query(callback_query.id)
-            bot.send_message(callback_query.from_user.id, get_data_iphone_12('Green'))
+        bot.answer_callback_query(callback_query.id)
+        bot.send_message(callback_query.from_user.id, get_data_iphone_12('Green'))
     elif code == '005':
-            bot.answer_callback_query(callback_query.id)
-            bot.send_message(callback_query.from_user.id, get_data_iphone_12('(PRODUCT) RED'))
+        bot.answer_callback_query(callback_query.id)
+        bot.send_message(callback_query.from_user.id, get_data_iphone_12('(PRODUCT) RED'))
     elif code == '006':
-            bot.answer_callback_query(callback_query.id)
-            bot.send_message(callback_query.from_user.id, get_data_iphone_12('Purple'))
-        # Айфоны 13
+        bot.answer_callback_query(callback_query.id)
+        bot.send_message(callback_query.from_user.id, get_data_iphone_12('Purple'))
+    # Айфоны 13
     elif code == '007':
-            bot.answer_callback_query(callback_query.id)
-            bot.send_message(callback_query.from_user.id, get_data_iphone_13('Pink'))
+        bot.answer_callback_query(callback_query.id)
+        bot.send_message(callback_query.from_user.id, get_data_iphone_13('Pink'))
     elif code == '008':
-            bot.answer_callback_query(callback_query.id)
-            bot.send_message(callback_query.from_user.id, get_data_iphone_13('Blue'))
+        bot.answer_callback_query(callback_query.id)
+        bot.send_message(callback_query.from_user.id, get_data_iphone_13('Blue'))
     elif code == '009':
-            bot.answer_callback_query(callback_query.id)
-            bot.send_message(callback_query.from_user.id, get_data_iphone_13('Midnight'))
+        bot.answer_callback_query(callback_query.id)
+        bot.send_message(callback_query.from_user.id, get_data_iphone_13('Midnight'))
     elif code == '010':
-            bot.answer_callback_query(callback_query.id)
-            bot.send_message(callback_query.from_user.id, get_data_iphone_13('(PRODUCT)RED'))
+        bot.answer_callback_query(callback_query.id)
+        bot.send_message(callback_query.from_user.id, get_data_iphone_13('(PRODUCT)RED'))
     elif code == '011':
-            bot.answer_callback_query(callback_query.id)
-            bot.send_message(callback_query.from_user.id, get_data_iphone_13('Starlight'))
+        bot.answer_callback_query(callback_query.id)
+        bot.send_message(callback_query.from_user.id, get_data_iphone_13('Starlight'))
     elif code == '012':
-            bot.answer_callback_query(callback_query.id)
-            bot.send_message(callback_query.from_user.id, get_data_iphone_13('Green'))
+        bot.answer_callback_query(callback_query.id)
+        bot.send_message(callback_query.from_user.id, get_data_iphone_13('Green'))
     else:
         bot.answer_callback_query(callback_query.id)
         bot.send_message(callback_query.from_user.id, 'Упс...')
